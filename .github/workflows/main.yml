@@ -35,9 +35,12 @@ jobs:
         run: python radar.py
 
       - name: Uloz mc_history
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
         run: |
           git config user.email "action@github.com"
           git config user.name "GitHub Action"
+          git remote set-url origin https://x-access-token:${GH_PAT}@github.com/VeronikaFilipes/Anomalie.git
           git add mc_history.json || true
           git diff --staged --quiet || git commit -m "mc_history update"
           git push
