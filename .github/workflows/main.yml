@@ -1,0 +1,43 @@
+name: Daily Radar
+
+on:
+  schedule:
+    - cron: '0 4 * * *'
+  workflow_dispatch:
+
+jobs:
+  run-radar:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run radar
+        env:
+          CI: true
+          DEVELOPER_TOKEN: ${{ secrets.DEVELOPER_TOKEN }}
+          CLIENT_ID: ${{ secrets.CLIENT_ID }}
+          CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
+          REFRESH_TOKEN: ${{ secrets.REFRESH_TOKEN }}
+          MCC_CUSTOMER_ID: ${{ secrets.MCC_CUSTOMER_ID }}
+          REPORT_PASSWORD: ${{ secrets.REPORT_PASSWORD }}
+          GITHUB_TOKEN: ${{ secrets.GH_PAT }}
+          GITHUB_REPO: VeronikaFilipes/Anomalie
+        run: python radar.py
+
+      - name: Uloz mc_history
+        run: |
+          git config user.email "action@github.com"
+          git config user.name "GitHub Action"
+          git add mc_history.json || true
+          git diff --staged --quiet || git commit -m "mc_history update"
+          git push
