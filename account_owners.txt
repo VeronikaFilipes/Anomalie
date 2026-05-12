@@ -1,0 +1,48 @@
+# Prirad ucty jednotlivym spravcum
+# Format: ID = Jmeno
+# Ucty ktere zde nejsou = automaticky "Ostatni"
+
+6501577129 = Veronika
+6015927850 = Veronika
+9832130774 = Veronika
+4299625058 = Veronika
+1801216403 = Veronika
+8046356825 = Veronika
+3431773595 = Veronika
+2095924888 = Veronika
+4648843530 = Veronika
+4915670484 = Veronika
+9810583182 = Veronika
+6865556143 = Veronika
+4174529629 = Veronika
+9951842209 = Veronika
+3646982543 = Veronika
+8357038978 = Veronika
+2462565284 = Veronika
+3100385092 = Veronika
+1107971921 = Veronika
+9575313703 = Veronika
+7518249095 = Veronika
+8090299543 = Veronika
+2904287929 = Veronika
+5363683295 = Veronika
+
+2464935845 = Veronika, Sabina
+
+8659438644 = Sabina
+2965146730 = Sabina
+6338338711 = Sabina
+1994994955 = Sabina
+6849157615 = Sabina
+5417966097 = Sabina
+9962932205 = Sabina
+1400102268 = Sabina
+6875958613 = Sabina
+3441827863 = Sabina
+5491448210 = Sabina
+8335443135 = Sabina
+4465019086 = Sabina
+9001211107 = Sabina
+9822417303 = Sabina
+1179809815 = Sabina
+3100746378 = Sabina
